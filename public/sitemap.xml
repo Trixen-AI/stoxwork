@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://stoxwork.xyz/</loc><lastmod>2026-09-18</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://stoxwork.xyz/app</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.8</priority></url>
+  <url><loc>https://stoxwork.xyz/app/lending</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stoxwork.xyz/app/trade</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/strategies</loc><lastmod>2026-09-18</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://stoxwork.xyz/app/intelligence</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/GME</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/CRCL</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/AMD</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/AAPL</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/AMZN</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/NVDA</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/TSLA</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/MSTR</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/META</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/MSFT</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/GOOGL</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/INTC</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+  <url><loc>https://stoxwork.xyz/app/vaults/SPY</loc><lastmod>2026-09-18</lastmod><changefreq>daily</changefreq><priority>0.6</priority></url>
+</urlset>

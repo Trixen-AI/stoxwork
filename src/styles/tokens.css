@@ -1,0 +1,49 @@
+/* Runtime tokens: everything the components read at paint time.
+   Kept unlayered so the cascade order matches the utility layer. */
+:root {
+  --page-background: #0e0f11;
+
+  --color-background: #0e0f11;
+  --color-foreground: #fff;
+  --color-surface: #151719;
+  --color-card: #1a1c1f;
+  --color-border: #ffffff14;
+  --color-muted-foreground: #ffffffb3;
+  --color-subtle-foreground: #ffffff80;
+
+  /* hairlines used by the container-query grid overlays and section dividers */
+  --grid-line: #ffffff1f;
+  --grid-line-strong: #ffffff2e;
+  --grid-line-faint: #ffffff0f;
+  --grid-line-subtle: #ffffff1a;
+  --card-hairline: #ffffff26;
+
+  /* data ink: gold carries the vault side, blue the borrow side, rose the hedge */
+  --vis-accent-gold: #f2c55c;
+  --vis-accent-blue: #6ea8fe;
+  --vis-accent-rose: #e8737d;
+  --vis-gold-soft: #f2c55c2e;
+  --vis-gold-mid: #f2c55c59;
+  --vis-gold-strong: #f2c55c8c;
+  --vis-blue-soft: #6ea8fe59;
+  --vis-blue-mid: #6ea8feb3;
+
+  /* chart marks: darker steps of the same three hues, validated for the dark card
+     surface (OKLCH L 0.48-0.67, adjacent CVD dE ~20). The brighter accents above
+     stay for UI text and chips; charts use these. */
+  --chart-1: #c08a1e;
+  --chart-2: #4a86e8;
+  --chart-3: #d45a66;
+  --chart-neutral: #6b6f76;
+
+  /* hero stack */
+  --hero-base: linear-gradient(160deg, #0b0906, #14100a 40%, #171208);
+  --hero-vignette: #070605b3;
+  --hero-overlay-center: #06050400;
+  --hero-overlay-mobile: #060504e0;
+  --hero-bottom-fade: #0e0f11;
+  --hero-tint: linear-gradient(160deg, #a9752138, #4a340f52 50%, #a975212e);
+
+  --code-bg: #212326;
+  --code-border: #292c30;
+}

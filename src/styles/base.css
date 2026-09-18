@@ -1,0 +1,47 @@
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+/* Nothing may widen the page on a phone. `clip` (not `hidden`) so it creates no
+   scroll container and the sticky dashboard header keeps working; overscroll-x
+   stops the sideways rubber-band on touch screens. */
+html,
+body {
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular figures everywhere a number can change under the reader. */
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,158 @@
+/* ---- shared page devices -------------------------------------------------- */
+
+/* 48px hairline lattice used behind cards and stat blocks */
+.tile-bg {
+  background-image:
+    linear-gradient(to right, var(--grid-line-faint) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-line-faint) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* the 1px rule that opens every section */
+.divider-gradient {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--grid-line-faint) 30%,
+    var(--grid-line-faint) 70%,
+    transparent
+  );
+}
+
+/* The `background` shorthand resets `background-clip`, so each rule sets the
+   gradient and the clip together, in that order. */
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-gold-bright), var(--color-gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.hero-accent {
+  background: linear-gradient(to right, var(--color-gold-bright), var(--color-gold-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.text-gradient,
+.hero-accent {
+  -webkit-text-fill-color: transparent;
+}
+
+/* primary fill: gold reads as the vault, so the label goes dark for contrast */
+.cta-primary,
+.hero-cta-primary {
+  background: linear-gradient(135deg, var(--color-gold-bright) 0%, var(--color-gold-light) 55%, var(--color-gold) 100%);
+}
+
+/* ---- ambient motion ------------------------------------------------------- */
+
+.scan-line {
+  animation: scanLine 4s linear infinite;
+}
+
+@keyframes scanLine {
+  0% {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes breathe {
+  0%,
+  to {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes node-pulse {
+  0%,
+  82%,
+  to {
+    transform: scale(1);
+  }
+  86% {
+    transform: scale(1.3);
+  }
+  92% {
+    transform: scale(1);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  to {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes ctaGlow {
+  0%,
+  to {
+    box-shadow:
+      0 0 16px #d09a381a,
+      0 0 32px #a975210d;
+  }
+  50% {
+    box-shadow:
+      0 0 20px 2px #d09a382e,
+      0 0 40px 4px #a9752114;
+  }
+}
+
+@keyframes dashFlow {
+  0% {
+    stroke-dashoffset: 16px;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes tapeSlide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@keyframes barStep {
+  0%,
+  to {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(var(--step-peak, 1.25));
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  to {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.5;
+  }
+}

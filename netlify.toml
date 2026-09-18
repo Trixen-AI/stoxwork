@@ -1,0 +1,46 @@
+# Netlify: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # VITE_REOWN_PROJECT_ID is NOT set here: add it in
+  # Site configuration > Environment variables (see .env.example).
+
+# Single-page app: every route (/app, /app/vaults/AAPL, ...) is rendered by the
+# client router. Real files (assets, og.png, sitemap.xml) are served first, so this
+# only catches paths that don't exist on disk.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# www -> apex, so search engines index one host only.
+[[redirects]]
+  from = "https://www.stoxwork.xyz/*"
+  to = "https://stoxwork.xyz/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=()"
+
+# Hashed build output never changes under the same name: cache it for a year.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# The HTML shell must always be fresh so a new deploy is picked up immediately.
+[[headers]]
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
