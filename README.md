@@ -28,18 +28,28 @@ dashboard, allowlist `https://equiyield.xyz`, `https://www.equiyield.xyz` and yo
 dev URL, or wallets will refuse to connect. Without the variable the site still works;
 the dashboard shows "Wallet not configured" in place of the Connect button.
 
-## Deploy (Netlify)
+## Deploy (Vercel)
 
-`netlify.toml` holds the whole setup: `npm run build`, publish `dist`, Node 22, the SPA
-fallback so routes like `/app/lending` survive a refresh, a `www` to apex redirect, cache
-headers and security headers.
+`vercel.json` holds the whole setup: Vite preset, `npm ci`, `npm run build`, output `dist`,
+the SPA rewrite so routes like `/app/lending` survive a refresh, a `www` to apex redirect,
+cache headers (hashed assets cached for a year, HTML always fresh) and security headers.
+Node is pinned to 22 through `engines` in `package.json`.
 
-1. Netlify: **Add new site > Import an existing project**, pick this GitHub repo.
-   Build settings are read from `netlify.toml`; leave the form's defaults.
-2. **Site configuration > Environment variables**: add `VITE_REOWN_PROJECT_ID`.
-3. **Domain management**: add `equiyield.xyz` as the primary domain (and `www.equiyield.xyz`),
-   then point DNS at Netlify and let it issue the HTTPS certificate.
-4. Deploy. After changing an environment variable, trigger a new deploy.
+1. Vercel: **Add New > Project**, import the GitHub repo. The Vite preset and build settings
+   come from `vercel.json`; leave the form's defaults.
+2. **Settings > Environment Variables**: add `VITE_REOWN_PROJECT_ID` (and `VITE_SOLANA_RPC`),
+   ticking Production and Preview.
+3. **Settings > Domains**: add `equiyield.xyz` and `www.equiyield.xyz`. Point DNS at Vercel as
+   the dashboard instructs (A record `76.76.21.21` for the apex, CNAME `cname.vercel-dns.com`
+   for `www`); HTTPS is issued automatically.
+4. Deploy. Every push to `main` then deploys to production, other branches get previews.
+   After changing an environment variable, redeploy.
+
+In the Reown dashboard, allowlist `https://equiyield.xyz` and `https://www.equiyield.xyz`.
+Preview deployments get their own `*.vercel.app` URL: add it too if you want to test
+wallet connections on a preview.
+
+`netlify.toml` is kept for anyone deploying to Netlify instead; Vercel ignores it.
 
 ## SEO
 
