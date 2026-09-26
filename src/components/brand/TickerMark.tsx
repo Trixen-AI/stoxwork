@@ -5,7 +5,7 @@ import { cn } from '@/lib/cn'
  *
  * Ticker symbols identify the underlying asset, so the chip is our own neutral mark,
  * not a company logo: the symbol set in the brand mono face on a tinted plate, with a
- * hairline that picks up the gold when the row is hovered.
+ * hairline that picks up the brand colour when the row is hovered.
  */
 export function TickerMark({
   ticker,

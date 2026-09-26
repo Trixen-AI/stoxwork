@@ -1,8 +1,7 @@
-import chainlink from '@/assets/partners/chainlink.svg?raw'
+import backed from '@/assets/partners/backed.svg?raw'
 import globaldollar from '@/assets/partners/globaldollar.svg?raw'
-import openzeppelin from '@/assets/partners/openzeppelin.svg?raw'
-import robinhood from '@/assets/partners/robinhood.svg?raw'
-import uniswap from '@/assets/partners/uniswap.svg?raw'
+import jupiter from '@/assets/partners/jupiter.svg?raw'
+import solana from '@/assets/partners/solana.svg?raw'
 import { resizeOnly } from '@/lib/svg'
 
 /**
@@ -10,20 +9,28 @@ import { resizeOnly } from '@/lib/svg'
  * Source URLs: assets/partners/SOURCES.md
  *
  * Each logo gets an optical height rather than one shared height: a compact mark
- * (Robinhood's feather, the Global Dollar pill) needs more height than a long
- * wordmark to carry the same visual weight.
+ * needs more height than a long wordmark to carry the same visual weight. Pyth
+ * publishes no fetchable official SVG, so it shows a neutral mark with its name.
  */
-type Partner = { name: string; svg: string; height: string }
+type Partner = { name: string; svg?: string; height: string }
 
 export const PARTNERS: Partner[] = [
-  { name: 'Robinhood', svg: resizeOnly(robinhood), height: 'h-7' },
-  { name: 'Uniswap', svg: resizeOnly(uniswap), height: 'h-6' },
-  { name: 'Chainlink', svg: resizeOnly(chainlink), height: 'h-5' },
+  { name: 'Solana', svg: resizeOnly(solana), height: 'h-5' },
+  { name: 'Jupiter', svg: resizeOnly(jupiter), height: 'h-7' },
+  { name: 'Pyth', height: 'h-5' },
   { name: 'Global Dollar (USDG)', svg: resizeOnly(globaldollar), height: 'h-6' },
-  { name: 'OpenZeppelin', svg: resizeOnly(openzeppelin), height: 'h-5' },
+  { name: 'Backed', svg: resizeOnly(backed), height: 'h-5' },
 ]
 
 export function PartnerLogo({ partner }: { partner: Partner }) {
+  if (!partner.svg) {
+    return (
+      <span className="inline-flex items-center gap-2 text-foreground/45">
+        <span aria-hidden="true" className="inline-block h-3.5 w-3.5 rounded-[4px] border border-current" />
+        <span className="text-[15px] font-medium tracking-tight">{partner.name}</span>
+      </span>
+    )
+  }
   return (
     <span
       className={`inline-flex ${partner.height} max-w-full items-center [&>svg]:h-full [&>svg]:w-auto [&>svg]:max-w-full`}

@@ -1,7 +1,7 @@
-# Stock Token logo sources
+# xStock logo sources
 
 Official company logo files, inlined unmodified (resized only). These identify the
-underlying asset of each Robinhood Chain Stock Token; they are not endorsements.
+underlying asset of each xStock; they are not endorsements.
 
 | ticker | file | source |
 |---|---|---|

@@ -15,7 +15,7 @@ import { cn } from '@/lib/cn'
 import { resizeOnly } from '@/lib/svg'
 
 /**
- * Official company logos for the Stock Tokens the vaults trade, unmodified and
+ * Official company logos for the xStocks the vaults trade, unmodified and
  * resized only. Sources: src/assets/stocks/SOURCES.md. SPY has no official SVG
  * available, so it keeps the neutral ticker chip.
  */

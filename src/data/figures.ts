@@ -11,7 +11,7 @@ export const PROTOCOL_FIGURES: Figure[] = [
   {
     label: 'Total value locked',
     value: `$${totalTvl().toFixed(2)}`,
-    note: `USDG across ${MARKETS.length} Stock Token vaults`,
+    note: `USDG across ${MARKETS.length} xStock vaults`,
   },
   {
     label: 'Fees earned, lifetime',
@@ -19,8 +19,8 @@ export const PROTOCOL_FIGURES: Figure[] = [
     note: 'Gross, before the protocol split',
   },
   {
-    label: 'STOX tokens burned',
-    value: PROTOCOL.stoxBurned.toFixed(1),
+    label: 'EQY tokens burned',
+    value: PROTOCOL.eqyBurned.toFixed(1),
     note: '20% of fees fund buybacks and burns.',
   },
 ]
@@ -29,25 +29,25 @@ export type FeeSlice = {
   label: string
   percent: number
   detail: string
-  tone: 'gold' | 'neutral' | 'blue'
+  tone: 'brand' | 'neutral' | 'blue'
 }
 
 export const FEE_SPLIT: FeeSlice[] = [
-  { label: 'Compounds', percent: 70, detail: 'Stays in the vault for depositors', tone: 'gold' },
+  { label: 'Compounds', percent: 70, detail: 'Stays in the vault for depositors', tone: 'brand' },
   { label: 'Protocol operations', percent: 10, detail: 'Treasury', tone: 'neutral' },
-  { label: 'STOX buyback reserve', percent: 20, detail: 'Bought back and burned', tone: 'blue' },
+  { label: 'EQY buyback reserve', percent: 20, detail: 'Bought back and burned', tone: 'blue' },
 ]
 
 export const HERO_POINTS = [
-  'One ERC-4626 vault per market',
+  'One vault per market',
   'Fees and interest recorded onchain',
-  'Canonical Robinhood Stock Tokens only',
+  'Canonical xStocks only',
 ]
 
 export const GUARD_CARDS = [
   {
     title: 'Fresh oracle data',
-    body: 'Chainlink price and L2 sequencer feeds must be fresh before any deposit, swap or borrow.',
+    body: 'Pyth price and confidence feeds must be fresh before any deposit, swap or borrow.',
     icon: 'feed' as const,
   },
   {

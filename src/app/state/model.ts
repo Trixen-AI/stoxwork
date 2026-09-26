@@ -3,7 +3,7 @@
  *
  * Protocol figures are sample data until deployment; wallet balances are real.
  * The maths mirror the contracts the concept describes:
- *   - ERC-4626 vaults: deposit USDG, receive shares at the vault's price per share
+ *   - vaults: deposit USDG, receive shares at the vault's price per share
  *   - isolated lending markets: supply USDG, or lock vault shares and borrow USDG
  *   - swaps through a vault's pool: constant product, 0.30% fee stays in the vault
  */
@@ -40,20 +40,20 @@ export type State = {
   /** Real token balances of the connected wallet, read from chain. Symbol -> amount. */
   balances: Record<string, number>
   balancesStatus: 'idle' | 'loading' | 'ready' | 'error'
-  /** StoxWork vault positions and loans. Empty until the contracts are deployed. */
+  /** EquiYield vault positions and loans. Empty until the contracts are deployed. */
   positions: Record<string, VaultPosition>
   loans: Record<string, LoanPosition>
   /** Protocol market state (sample figures, see data/markets.ts). */
   vaults: Record<string, VaultState>
   markets: Record<string, MarketState>
-  /** StoxWork transactions by this wallet. Empty until the contracts are deployed. */
+  /** EquiYield transactions by this wallet. Empty until the contracts are deployed. */
   activity: Activity[]
 }
 
 /**
  * Starting state. Nothing about the user is invented: balances arrive from chain
  * once a wallet connects, and positions, loans and activity stay empty until the
- * StoxWork contracts exist for them to live in.
+ * EquiYield contracts exist for them to live in.
  */
 export function seedState(): State {
   return {

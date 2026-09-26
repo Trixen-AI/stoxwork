@@ -122,7 +122,7 @@ function ActionPanel({ ticker }: { ticker: string }) {
           <>
             <div className="flex justify-between">
               <dt className="text-foreground/45">Supply APY</dt>
-              <dd className="tnum font-mono text-gold-bright">{pct(supplyApy(m), 2)}</dd>
+              <dd className="tnum font-mono text-brand-bright">{pct(supplyApy(m), 2)}</dd>
             </div>
             <div className="flex justify-between">
               <dt className="text-foreground/45">You supply after</dt>
@@ -170,7 +170,7 @@ function ActionPanel({ ticker }: { ticker: string }) {
       {side === 'borrow' && freeShares <= 0 && loan.collateralShares <= 0 ? (
         <p className="text-xs text-foreground/45">
           You hold no {ticker} vault shares to lock.{' '}
-          <Link to={`/app/vaults/${ticker}`} className="text-gold-bright hover:underline">
+          <Link to={`/app/vaults/${ticker}`} className="text-brand-bright hover:underline">
             Deposit into the {ticker} vault
           </Link>{' '}
           first.
@@ -247,17 +247,17 @@ export function Lending() {
                     <td className="px-5 py-3 text-right">
                       <span className="inline-flex items-center gap-2">
                         <span className="h-1 w-12 overflow-hidden rounded-full bg-foreground/[0.08]">
-                          <span className="block h-full rounded-full bg-gold-bright/70" style={{ width: `${u * 100}%` }} />
+                          <span className="block h-full rounded-full bg-brand-bright/70" style={{ width: `${u * 100}%` }} />
                         </span>
                         <span className="tnum font-mono text-xs text-foreground/70">{pct(u * 100, 0)}</span>
                       </span>
                     </td>
-                    <td className="tnum px-5 py-3 text-right font-mono text-gold-bright/90">{pct(supplyApy(mk), 2)}</td>
+                    <td className="tnum px-5 py-3 text-right font-mono text-brand-bright/90">{pct(supplyApy(mk), 2)}</td>
                     <td className="tnum px-5 py-3 text-right font-mono text-ink-blue">{pct(borrowApr(mk), 2)}</td>
                     <td className="px-5 py-3 text-right">
                       <span className="inline-flex items-center gap-1.5 text-xs text-foreground/50">
-                        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold-bright/80" />
-                        Chainlink · fresh
+                        <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-brand-bright/80" />
+                        Pyth · fresh
                       </span>
                     </td>
                   </tr>
@@ -283,7 +283,7 @@ export function Lending() {
             }
           />
           <div className="grid gap-px bg-foreground/[0.06] sm:grid-cols-2">
-            <StatTile label="Lenders earn" value={pct(supplyApy(m), 2)} tone="gold" note="APY, from borrower interest" />
+            <StatTile label="Lenders earn" value={pct(supplyApy(m), 2)} tone="brand" note="APY, from borrower interest" />
             <StatTile label="Borrowers pay" value={pct(borrowApr(m), 2)} tone="blue" note="APR, rises with utilisation" />
             <StatTile label="Available to borrow" value={usd(available(m))} note={`${pct(utilisation(m) * 100, 1)} utilised`} />
             <StatTile label="Collateral price" value={`${num(v.pricePerShare, 4)}`} note="USDG per vault share, priced onchain" />

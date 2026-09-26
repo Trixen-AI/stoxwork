@@ -4,7 +4,7 @@ import { FEE_SPLIT } from '@/data/figures'
 import { cn } from '@/lib/cn'
 
 const TONE = {
-  gold: { bar: 'bg-gold-bright/70', text: 'text-gold-bright' },
+  brand: { bar: 'bg-brand-bright/70', text: 'text-brand-bright' },
   neutral: { bar: 'bg-foreground/30', text: 'text-foreground/70' },
   blue: { bar: 'bg-ink-blue/70', text: 'text-ink-blue' },
 } as const
@@ -21,7 +21,7 @@ export function FeeSplit() {
                 We earn only <span className="text-foreground/50">when the vault earns.</span>
               </>
             }
-            description="No deposit, withdrawal or management fee. The split applies only to fees actually claimed onchain. Buyback funds stay in USDG inside the reserve contract until a buyback swaps them for STOX and burns it."
+            description="No deposit, withdrawal or management fee. The split applies only to fees actually claimed onchain. Buyback funds stay in USDG inside the reserve contract until a buyback swaps them for EQY and burns it."
           />
         </Rise>
 

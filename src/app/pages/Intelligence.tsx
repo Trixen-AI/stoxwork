@@ -47,9 +47,9 @@ export function Intelligence() {
       />
 
       <StatGrid className="mb-6 grid-cols-2 lg:grid-cols-4">
-        <StatTile label="Total value locked" value={usd(tvl)} note={`${MARKETS.length} Stock Token vaults`} />
-        <StatTile label="Fees earned, lifetime" value={usd(fees)} tone="gold" note="Gross, before the protocol split" />
-        <StatTile label="STOX burned" value={num(PROTOCOL.stoxBurned, 1)} note={`${usd(buybackSpent)} of fees spent on buybacks`} />
+        <StatTile label="Total value locked" value={usd(tvl)} note={`${MARKETS.length} xStock vaults`} />
+        <StatTile label="Fees earned, lifetime" value={usd(fees)} tone="brand" note="Gross, before the protocol split" />
+        <StatTile label="EQY burned" value={num(PROTOCOL.eqyBurned, 1)} note={`${usd(buybackSpent)} of fees spent on buybacks`} />
         <StatTile label="Buyback reserve" value={usd(PROTOCOL.buybackReserveUsdg)} note="USDG waiting for the next buyback" />
       </StatGrid>
 
@@ -91,12 +91,12 @@ export function Intelligence() {
             slices={[
               { label: `Compounds for depositors · ${split.compound}%`, value: (fees * split.compound) / 100, color: 'var(--chart-1)' },
               { label: `Protocol operations · ${split.operations}%`, value: (fees * split.operations) / 100, color: 'var(--chart-neutral)' },
-              { label: `STOX buyback and burn · ${split.buyback}%`, value: (fees * split.buyback) / 100, color: 'var(--chart-2)' },
+              { label: `EQY buyback and burn · ${split.buyback}%`, value: (fees * split.buyback) / 100, color: 'var(--chart-2)' },
             ]}
           />
           <p className="mt-4 text-xs text-foreground/40">
             No deposit, withdrawal or management fee. Buyback funds stay in USDG inside the reserve contract until a buyback
-            swaps them for STOX and burns it.
+            swaps them for EQY and burns it.
           </p>
         </div>
       </Panel>

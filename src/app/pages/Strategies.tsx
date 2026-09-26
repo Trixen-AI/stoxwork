@@ -58,13 +58,13 @@ export function Strategies() {
           <PanelHeader title="Delta-neutral vault yield" aside={<Closed />} />
           <div className="p-5">
             <p className="text-sm leading-relaxed text-foreground/60">
-              Keep a vault's trading fees while an external short offsets the Stock Token's price moves.
+              Keep a vault's trading fees while an external short offsets the xStock's price moves.
             </p>
             <div className="mt-5 grid gap-px overflow-hidden rounded-lg border border-foreground/[0.07] bg-foreground/[0.06]">
               <div className="flex items-center gap-3 bg-card p-4">
                 <StockLogo ticker="TSLA" size="sm" />
                 <span className="flex-1">
-                  <span className="block font-mono text-[10px] tracking-[0.14em] text-gold-bright/80 uppercase">↗ Long</span>
+                  <span className="block font-mono text-[10px] tracking-[0.14em] text-brand-bright/80 uppercase">↗ Long</span>
                   <span className="block text-sm">TSLA / USDG vault position</span>
                 </span>
                 <span className="text-xs text-foreground/45">earns trading fees</span>

@@ -67,7 +67,7 @@ export function Vaults() {
       live
       title={
         <>
-          One vault. <span className="text-foreground/50">One Stock Token.</span>
+          One vault. <span className="text-foreground/50">One xStock.</span>
         </>
       }
       description="Every vault runs managed liquidity for a single USDG pair. Deposit USDG, own a slice of that market, and let fees compound inside the vault. Every number on the page comes from the chain."
@@ -120,7 +120,7 @@ export function Lending() {
         <div className="grid gap-px bg-foreground/[0.06] sm:grid-cols-2">
           <div className="bg-card p-6">
             <p className="text-[13px] text-foreground/45">Lenders earn</p>
-            <p className="tnum mt-2 font-mono text-2xl font-medium tracking-tight text-gold-bright">
+            <p className="tnum mt-2 font-mono text-2xl font-medium tracking-tight text-brand-bright">
               {m.lendersEarn}
               <span className="ml-1.5 text-xs text-foreground/35">APY</span>
             </p>
@@ -136,7 +136,7 @@ export function Lending() {
 
         <div className="border-t border-foreground/[0.07] px-6 py-5">
           <div className="h-1.5 w-full overflow-hidden rounded-full bg-foreground/[0.06]">
-            <div className="h-full rounded-full bg-gold-bright/60" style={{ width: `${m.utilization}%` }} />
+            <div className="h-full rounded-full bg-brand-bright/60" style={{ width: `${m.utilization}%` }} />
           </div>
           <p className="tnum mt-3 font-mono text-[11px] text-foreground/45">
             {m.utilization}% utilized · {m.available} USDG available
@@ -153,7 +153,7 @@ function Leg({ direction, title, note }: { direction: 'long' | 'short'; title: s
   return (
     <div className="bg-card p-6 lg:p-8">
       <p
-        className={`font-mono text-[11px] tracking-[0.14em] uppercase ${long ? 'text-gold-bright/80' : 'text-ink-rose/80'}`}
+        className={`font-mono text-[11px] tracking-[0.14em] uppercase ${long ? 'text-brand-bright/80' : 'text-ink-rose/80'}`}
       >
         {long ? '↗ Long' : '↘ Short'}
       </p>
@@ -179,7 +179,7 @@ export function Strategies() {
           Managed positions <span className="text-foreground/50">that combine both.</span>
         </>
       }
-      description="Two strategies are being designed: a basket of the best-earning vaults, and a delta-neutral position that keeps vault fees while an external short offsets the Stock Token's price moves. Deposits open only after review."
+      description="Two strategies are being designed: a basket of the best-earning vaults, and a delta-neutral position that keeps vault fees while an external short offsets the xStock's price moves. Deposits open only after review."
       cta="Preview strategies"
       ctaHref="/app/strategies"
     >

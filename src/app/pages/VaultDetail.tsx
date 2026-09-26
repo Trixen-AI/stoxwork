@@ -41,7 +41,7 @@ function DepositPanel({ ticker }: { ticker: string }) {
   const usdg = state.balances.USDG ?? 0
 
   // Deposit takes USDG in; withdraw takes USDG out, converted to shares at the
-  // vault's price per share (ERC-4626 previewDeposit / previewWithdraw).
+  // vault's price per share (vault previewDeposit / previewWithdraw).
   const shares = n / v.pricePerShare
   const action =
     mode === 'deposit'
@@ -96,7 +96,7 @@ function DepositPanel({ ticker }: { ticker: string }) {
       />
 
       <p className="text-[11px] leading-relaxed text-foreground/35">
-        Chainlink price and sequencer feeds are checked before every deposit. Vault shares are not a stablecoin and are
+        Pyth price feeds are checked before every deposit. Vault shares are not a stablecoin and are
         not principal-protected.
       </p>
     </div>
@@ -120,7 +120,7 @@ export function VaultDetail() {
     return (
       <div className="py-20 text-center">
         <p className="text-sm text-foreground/50">There is no vault for “{ticker}”.</p>
-        <Link to="/app/vaults" className="mt-4 inline-block text-sm text-gold-bright hover:underline">
+        <Link to="/app/vaults" className="mt-4 inline-block text-sm text-brand-bright hover:underline">
           Back to all vaults
         </Link>
       </div>
@@ -161,7 +161,7 @@ export function VaultDetail() {
 
       <StatGrid className="mb-6 grid-cols-2 lg:grid-cols-4">
         <StatTile label="TVL" value={usd(v.tvl)} note={`Cap ${usd(VAULT_CAP)} · ${pct((v.tvl / VAULT_CAP) * 100, 1)} used`} />
-        <StatTile label="Est. fee APR" value={pct(meta.feeApr, 1)} tone="gold" note="From observed pool fees, not a forecast" />
+        <StatTile label="Est. fee APR" value={pct(meta.feeApr, 1)} tone="brand" note="From observed pool fees, not a forecast" />
         <StatTile label="Price per share" value={num(v.pricePerShare, 4)} note="USDG per vault share" />
         {/* personal figures only once a wallet is connected */}
         <StatTile
@@ -201,7 +201,7 @@ export function VaultDetail() {
               <StackBar
                 format={usd}
                 slices={[
-                  { label: `${meta.ticker} Stock Token`, value: v.tvl * (v.stockShare / 100), color: 'var(--chart-1)', detail: pct(v.stockShare, 0) },
+                  { label: `${meta.ticker} xStock`, value: v.tvl * (v.stockShare / 100), color: 'var(--chart-1)', detail: pct(v.stockShare, 0) },
                   { label: 'USDG', value: v.tvl * (1 - v.stockShare / 100), color: 'var(--chart-2)', detail: pct(100 - v.stockShare, 0) },
                 ]}
               />
@@ -236,7 +236,7 @@ export function VaultDetail() {
                 Lock {meta.ticker} vault shares as collateral and borrow USDG up to {pct(RISK.maxLtv * 100, 0)} of their
                 value. The shares keep earning while locked.
               </p>
-              <Link to={`/app/lending?market=${meta.ticker}`} className="mt-3 inline-block text-sm text-gold-bright hover:underline">
+              <Link to={`/app/lending?market=${meta.ticker}`} className="mt-3 inline-block text-sm text-brand-bright hover:underline">
                 Open {meta.ticker} lending market →
               </Link>
             </Panel>

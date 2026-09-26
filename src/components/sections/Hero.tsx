@@ -64,7 +64,7 @@ export function Hero() {
               href="#vaults"
               className="group inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/5 py-1 pr-2.5 pl-3 text-sm backdrop-blur-xl transition-all duration-200 hover:border-foreground/25 hover:bg-foreground/10"
             >
-              <span className="h-1.5 w-1.5 flex-shrink-0 animate-pulse rounded-full bg-gold-bright/80" />
+              <span className="h-1.5 w-1.5 flex-shrink-0 animate-pulse rounded-full bg-brand-bright/80" />
               <span className="text-foreground/70">Vaults · Lending · Strategies</span>
               <span className="h-3.5 w-px flex-shrink-0 bg-foreground/15" />
               <span className="inline-flex items-center gap-1 font-medium text-foreground">

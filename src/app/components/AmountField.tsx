@@ -36,7 +36,7 @@ export function AmountField({
       </div>
       <div
         className={cn(
-          'flex items-center gap-2 rounded-lg border bg-background/60 px-3 transition-colors focus-within:border-gold-bright/50',
+          'flex items-center gap-2 rounded-lg border bg-background/60 px-3 transition-colors focus-within:border-brand-bright/50',
           error ? 'border-ink-rose/50' : 'border-foreground/10',
         )}
       >
@@ -57,7 +57,7 @@ export function AmountField({
         <button
           type="button"
           onClick={() => onChange(max > 0 ? String(Math.floor(max * 1e6) / 1e6) : '')}
-          className="cursor-pointer rounded-md border border-foreground/10 px-2 py-1 font-mono text-[10px] tracking-wider text-foreground/60 uppercase transition-colors hover:border-gold-bright/40 hover:text-gold-bright"
+          className="cursor-pointer rounded-md border border-foreground/10 px-2 py-1 font-mono text-[10px] tracking-wider text-foreground/60 uppercase transition-colors hover:border-brand-bright/40 hover:text-brand-bright"
         >
           Max
         </button>

@@ -10,7 +10,7 @@ export type Vault = {
   pair: string
   tvl: string
   feeApr: string
-  /** Stock Token share / USDG share of the vault's inventory, in percent. */
+  /** xStock share / USDG share of the vault's inventory, in percent. */
   inventory: [number, number]
 }
 

@@ -14,22 +14,23 @@
   --color-black: #000;
   --color-white: #fff;
 
-  --color-gold: #a97521;
-  --color-gold-light: #d09a38;
-  --color-gold-dark: #7d5615;
-  --color-gold-bright: #f2c55c;
-  --color-gold-subtle: #a9752126;
+  --color-brand: #f98500;
+  --color-brand-light: #fb9c2b;
+  --color-brand-bright: #ffa23d;
+  --color-brand-dark: #b35f00;
+  --color-brand-subtle: #f9850026;
 
-  --color-background: #0e0f11;
+  --color-background: #0a0a0b;
   --color-foreground: #fff;
-  --color-surface: #151719;
-  --color-card: #1a1c1f;
+  --color-surface: #141416;
+  --color-card: #17181a;
   --color-border: #ffffff14;
   --color-muted-foreground: #ffffffb3;
   --color-subtle-foreground: #ffffff80;
 
-  --color-ink-blue: #6ea8fe;
-  --color-ink-rose: #e8737d;
+  --color-ink-mint: #71cfa3;
+  --color-ink-blue: #7cc4f8;
+  --color-ink-rose: #e0707a;
 
   --text-xs: 0.75rem;
   --text-xs--line-height: calc(1 / 0.75);

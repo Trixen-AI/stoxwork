@@ -18,7 +18,7 @@ export function Portfolio() {
   const b = state.balances
   const reading = state.balancesStatus === 'loading' || state.balancesStatus === 'idle'
 
-  // StoxWork positions are read from the vault and lending contracts; until those are
+  // EquiYield positions are read from the vault and lending contracts; until those are
   // deployed these lists are empty, and the page says so rather than inventing any.
   const positions = Object.entries(state.positions)
     .filter(([, p]) => p.shares > 1e-9)
@@ -52,24 +52,24 @@ export function Portfolio() {
             <p className="mt-2 text-5xl font-semibold tracking-tight">{reading ? '…' : usd(b.USDG ?? 0)}</p>
             <p className="mt-2 text-sm text-foreground/45">
               {state.balancesStatus === 'error'
-                ? 'Could not reach Robinhood Chain. Retrying in the background.'
-                : 'Read live from your wallet on Robinhood Chain.'}
+                ? 'Could not reach Solana. Retrying in the background.'
+                : 'Read live from your wallet on Solana.'}
             </p>
           </Panel>
 
           <StatGrid className="grid-cols-2 lg:grid-cols-4">
-            <StatTile label="ETH for gas" value={reading ? '…' : amount(b.ETH ?? 0)} note="Robinhood Chain pays gas in ETH" />
-            <StatTile label="Stock Tokens held" value={reading ? '…' : String(stocks.length)} note="Canonical Robinhood tokens" />
-            <StatTile label="In StoxWork vaults" value={usd(positions.reduce((s, p) => s + p.value, 0))} note="Opens when vaults deploy" />
+            <StatTile label="SOL for fees" value={reading ? '…' : amount(b.SOL ?? 0)} note="Solana pays fees in SOL" />
+            <StatTile label="xStocks held" value={reading ? '…' : String(stocks.length)} note="Canonical xStocks" />
+            <StatTile label="In EquiYield vaults" value={usd(positions.reduce((s, p) => s + p.value, 0))} note="Opens when vaults deploy" />
             <StatTile label="Borrowed" value={usd(loans.reduce((s, l) => s + l.borrowed, 0))} tone="blue" note="No open loans" />
           </StatGrid>
 
           <Panel>
             <PanelHeader
-              title="Stock Tokens in your wallet"
+              title="xStocks in your wallet"
               aside={
                 <a href={`${EXPLORER}/address/${state.wallet.address}`} target="_blank" rel="noopener noreferrer" className="text-xs text-foreground/50 hover:text-foreground">
-                  Blockscout ↗
+                  Solscan ↗
                 </a>
               }
             />
@@ -85,14 +85,14 @@ export function Portfolio() {
                       <span className="block text-xs text-foreground/40">{marketByTicker.get(s.ticker)?.company}</span>
                     </span>
                     <span className="tnum font-mono text-sm">{amount(s.amount)}</span>
-                    <Link to={`/app/vaults/${s.ticker}`} className="ml-2 text-xs text-foreground/50 hover:text-gold-bright">
+                    <Link to={`/app/vaults/${s.ticker}`} className="ml-2 text-xs text-foreground/50 hover:text-brand-bright">
                       Vault →
                     </Link>
                   </li>
                 ))}
               </ul>
             ) : (
-              <p className="px-5 py-10 text-center text-sm text-foreground/45">This wallet holds no Robinhood Stock Tokens.</p>
+              <p className="px-5 py-10 text-center text-sm text-foreground/45">This wallet holds no xStocks.</p>
             )}
           </Panel>
 
@@ -105,13 +105,13 @@ export function Portfolio() {
                     <StockLogo ticker={p.ticker} size="sm" />
                     <span className="flex-1 text-sm font-medium">{p.ticker}</span>
                     <span className="tnum font-mono text-sm">{usd(p.value)}</span>
-                    <span className="tnum w-16 text-right font-mono text-xs text-gold-bright/90">{pct(p.apr, 1)}</span>
+                    <span className="tnum w-16 text-right font-mono text-xs text-brand-bright/90">{pct(p.apr, 1)}</span>
                   </li>
                 ))}
               </ul>
             ) : (
               <p className="px-5 py-10 text-center text-sm text-foreground/45">
-                No vault positions yet. <Link to="/app/vaults" className="text-gold-bright hover:underline">Pick a vault</Link> to start.
+                No vault positions yet. <Link to="/app/vaults" className="text-brand-bright hover:underline">Pick a vault</Link> to start.
               </p>
             )}
           </Panel>

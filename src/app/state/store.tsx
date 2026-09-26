@@ -132,8 +132,8 @@ export function reducer(s: State, a: Action): State {
 // Earlier builds saved simulated balances in the browser. Nothing is stored now, so
 // clear those once so no old figure can ever resurface.
 try {
-  localStorage.removeItem('stoxwork.demo.v1')
-  localStorage.removeItem('stoxwork.demo.v2')
+  localStorage.removeItem('equiyield.demo.v1')
+  localStorage.removeItem('equiyield.demo.v2')
 } catch {
   // storage unavailable: nothing to clear
 }

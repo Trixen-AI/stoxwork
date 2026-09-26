@@ -6,13 +6,13 @@ import { SectionHeading } from '@/components/ui/SectionHeading'
 import { ArrowRight } from '@/components/ui/icons'
 import { TOP_VAULTS } from '@/data/vaults'
 
-/** Stock Token share against USDG share, as a thin two-tone rail with the split. */
+/** xStock share against USDG share, as a thin two-tone rail with the split. */
 function Inventory({ split }: { split: [number, number] }) {
   const [stock, usdg] = split
   return (
     <span className="inline-flex items-center justify-end gap-2.5">
       <span className="hidden h-1 w-14 overflow-hidden rounded-full bg-ink-blue/40 sm:inline-flex">
-        <span className="h-full bg-gold-bright/80" style={{ width: `${stock}%` }} />
+        <span className="h-full bg-brand-bright/80" style={{ width: `${stock}%` }} />
       </span>
       <span className="tnum">
         {stock}
@@ -57,7 +57,7 @@ export function TopVaults() {
                   key={vault.ticker}
                   className="grid grid-cols-2 items-center gap-x-4 gap-y-2 border-b border-foreground/[0.05] px-6 py-4 transition-colors duration-200 last:border-b-0 hover:bg-foreground/[0.02] sm:grid-cols-[1.6fr_1fr_1fr_1fr]"
                 >
-                  <SmartLink href={`/app/vaults/${vault.ticker}`} className="col-span-2 flex items-center gap-3 transition-colors hover:text-gold-bright sm:col-span-1">
+                  <SmartLink href={`/app/vaults/${vault.ticker}`} className="col-span-2 flex items-center gap-3 transition-colors hover:text-brand-bright sm:col-span-1">
                     <StockLogo ticker={vault.ticker} />
                     <span>
                       <span className="block text-sm font-medium tracking-tight text-foreground">{vault.ticker}</span>
@@ -69,7 +69,7 @@ export function TopVaults() {
                     <span className={MOBILE_LABEL}>TVL</span>
                     {vault.tvl}
                   </span>
-                  <span className="tnum text-right font-mono text-[13px] text-gold-bright/90">
+                  <span className="tnum text-right font-mono text-[13px] text-brand-bright/90">
                     <span className={MOBILE_LABEL}>APR</span>
                     {vault.feeApr}
                   </span>

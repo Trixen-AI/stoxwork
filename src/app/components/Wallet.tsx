@@ -3,7 +3,7 @@ import { AnimatePresence, motion } from 'motion/react'
 import { useEffect, useRef, useState } from 'react'
 import { useStore } from '@/app/state/store'
 import { walletEnabled } from '@/app/wallet/config'
-import { EXPLORER } from '@/data/tokens'
+import { explorerAddress } from '@/data/tokens'
 import { amount, shortAddr } from '@/lib/format'
 import { cn } from '@/lib/cn'
 
@@ -36,20 +36,20 @@ function ReownConnectButton({ className, label = 'Connect wallet' }: { className
 
 /* ---- connected account ------------------------------------------------------ */
 
-/** The connected wallet's real holdings: ETH for gas, USDG, then any Stock Tokens held. */
+/** The connected wallet's real holdings: SOL for fees, USDG, then any xStocks held. */
 export function WalletBalances() {
   const { state } = useStore()
   if (state.balancesStatus === 'loading' || state.balancesStatus === 'idle') {
     return <p className="mt-2 text-sm text-foreground/40">Reading balances…</p>
   }
   if (state.balancesStatus === 'error') {
-    return <p className="mt-2 text-sm text-ink-rose">Could not reach Robinhood Chain. Retrying.</p>
+    return <p className="mt-2 text-sm text-ink-rose">Could not reach Solana. Retrying.</p>
   }
   const b = state.balances
-  const stocks = Object.entries(b).filter(([k, v]) => k !== 'ETH' && k !== 'USDG' && v > 0)
+  const stocks = Object.entries(b).filter(([k, v]) => k !== 'SOL' && k !== 'USDG' && v > 0)
   return (
     <dl className="mt-2 space-y-1.5 text-sm">
-      {[['ETH', b.ETH ?? 0] as const, ['USDG', b.USDG ?? 0] as const, ...stocks].map(([k, v]) => (
+      {[['SOL', b.SOL ?? 0] as const, ['USDG', b.USDG ?? 0] as const, ...stocks].map(([k, v]) => (
         <div key={k} className="flex justify-between">
           <dt className="text-foreground/55">{k}</dt>
           <dd className="tnum font-mono">{amount(v)}</dd>
@@ -91,7 +91,7 @@ function AccountMenu() {
         aria-expanded={menu}
         className="flex cursor-pointer items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.04] py-1.5 pr-3 pl-2 text-sm transition-colors hover:border-foreground/20"
       >
-        <span aria-hidden="true" className="h-5 w-5 rounded-full bg-gradient-to-br from-gold-bright to-ink-blue" />
+        <span aria-hidden="true" className="h-5 w-5 rounded-full bg-gradient-to-br from-brand-bright to-ink-blue" />
         <span className="font-mono text-xs">{address ? shortAddr(address) : 'Connected'}</span>
       </button>
 
@@ -106,7 +106,7 @@ function AccountMenu() {
           >
             <div className="px-3 py-2">
               <p className="font-mono text-[10px] tracking-[0.14em] text-foreground/40 uppercase">Wallet balances</p>
-              <p className="mt-1 text-[11px] leading-relaxed text-foreground/35">Read live from Robinhood Chain.</p>
+              <p className="mt-1 text-[11px] leading-relaxed text-foreground/35">Read live from Solana.</p>
               <WalletBalances />
             </div>
             <div className="my-1 h-px bg-foreground/[0.07]" />
@@ -121,13 +121,13 @@ function AccountMenu() {
               Wallet & network
             </button>
             <a
-              href={`${EXPLORER}/address/${state.wallet.address}`}
+              href={explorerAddress(state.wallet.address)}
               target="_blank"
               rel="noopener noreferrer"
               className={item}
               onClick={() => setMenu(false)}
             >
-              View on Blockscout ↗
+              View on Solscan ↗
             </a>
             <button
               type="button"
@@ -171,8 +171,8 @@ function ReownNetworkChip() {
       onClick={() => open({ view: 'Networks' })}
       className="hidden cursor-pointer items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.03] px-3 py-1.5 font-mono text-[10px] tracking-wider text-foreground/55 uppercase transition-colors hover:border-foreground/20 sm:inline-flex"
     >
-      <span aria-hidden="true" className={cn('h-1.5 w-1.5 rounded-full', isConnected ? 'animate-pulse bg-gold-bright/80' : 'bg-foreground/30')} />
-      {caipNetwork?.name ?? 'Robinhood Chain'}
+      <span aria-hidden="true" className={cn('h-1.5 w-1.5 rounded-full', isConnected ? 'animate-pulse bg-brand-bright/80' : 'bg-foreground/30')} />
+      {caipNetwork?.name ?? 'Solana'}
     </button>
   )
 }
@@ -183,7 +183,7 @@ export function NetworkChip() {
   ) : (
     <span className="hidden items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.03] px-3 py-1.5 font-mono text-[10px] tracking-wider text-foreground/55 uppercase sm:inline-flex">
       <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-foreground/30" />
-      Robinhood Chain
+      Solana
     </span>
   )
 }

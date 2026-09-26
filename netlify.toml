@@ -19,8 +19,8 @@
 
 # www -> apex, so search engines index one host only.
 [[redirects]]
-  from = "https://www.stoxwork.xyz/*"
-  to = "https://stoxwork.xyz/:splat"
+  from = "https://www.equiyield.xyz/*"
+  to = "https://equiyield.xyz/:splat"
   status = 301
   force = true
 

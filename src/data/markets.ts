@@ -9,15 +9,15 @@
 export type Market = {
   ticker: string
   company: string
-  /** Stock Token price in USDG. */
+  /** xStock price in USDG. */
   price: number
   /** Vault TVL in USDG. */
   tvl: number
   /** Estimated fee APR, percent. */
   feeApr: number
-  /** Stock Token share of vault inventory, percent (the rest is USDG). */
+  /** xStock share of vault inventory, percent (the rest is USDG). */
   stockShare: number
-  /** USDG value of one vault share (ERC-4626 convertToAssets(1e18)). */
+  /** USDG value of one vault share (vault convertToAssets(1e18)). */
   pricePerShare: number
   /** Gross fees the vault has collected since launch, USDG. */
   feesLifetime: number
@@ -72,8 +72,8 @@ export const VAULT_CAP = 1000
 
 /** Protocol-wide figures that are not a sum of the markets above. */
 export const PROTOCOL = {
-  stoxBurned: 386.5,
-  stoxPrice: 0.00499,
+  eqyBurned: 386.5,
+  eqyPrice: 0.00499,
   buybackReserveUsdg: 0.62,
   feeSplit: { compound: 70, operations: 10, buyback: 20 },
 }

@@ -3,7 +3,7 @@ import { num } from '@/lib/format'
 import { cn } from '@/lib/cn'
 
 const TONE = {
-  safe: { text: 'text-gold-bright', fill: 'bg-gold-bright/70', label: 'Healthy' },
+  safe: { text: 'text-brand-bright', fill: 'bg-brand-bright/70', label: 'Healthy' },
   watch: { text: 'text-foreground', fill: 'bg-foreground/60', label: 'Watch' },
   risk: { text: 'text-ink-rose', fill: 'bg-ink-rose/80', label: 'At risk' },
 } as const

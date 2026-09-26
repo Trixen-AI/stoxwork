@@ -1,6 +1,6 @@
 import { useLocation } from 'react-router'
 
-export const SITE_URL = 'https://stoxwork.xyz'
+export const SITE_URL = 'https://equiyield.xyz'
 
 /**
  * Per-page <title> and canonical URL. React 19 hoists both into <head>, so each route
@@ -9,7 +9,7 @@ export const SITE_URL = 'https://stoxwork.xyz'
  */
 export function Seo({ title }: { title?: string }) {
   const { pathname } = useLocation()
-  const full = title ? `${title} · StoxWork` : 'StoxWork · Tokenized Stock Vaults on Robinhood Chain'
+  const full = title ? `${title} · EquiYield` : 'EquiYield · Tokenized Stock Vaults on Solana'
   const path = pathname === '/' ? '/' : pathname.replace(/\/+$/, '')
   return (
     <>

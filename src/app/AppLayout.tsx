@@ -66,7 +66,7 @@ function NavList({ onNavigate }: { onNavigate?: () => void }) {
                 >
                   {({ isActive }) => (
                     <>
-                      <span className={isActive ? 'text-gold-bright' : ''}>{it.icon}</span>
+                      <span className={isActive ? 'text-brand-bright' : ''}>{it.icon}</span>
                       {it.label}
                     </>
                   )}
@@ -105,7 +105,7 @@ export function AppLayout() {
         <div className="min-h-dvh bg-background">
           {/* sidebar, desktop */}
           <aside className="fixed inset-y-0 left-0 z-30 hidden w-60 flex-col border-r border-foreground/[0.06] bg-background px-3 py-5 lg:flex">
-            <Link to="/" className="mb-8 px-3" aria-label="StoxWork home">
+            <Link to="/" className="mb-8 px-3" aria-label="EquiYield home">
               <Logo className="h-5 w-auto text-foreground" />
             </Link>
             <NavList />
@@ -134,7 +134,7 @@ export function AppLayout() {
                   transition={{ type: 'spring', stiffness: 380, damping: 36 }}
                   className="fixed inset-y-0 left-0 z-50 flex w-64 flex-col border-r border-foreground/[0.06] bg-background px-3 py-5 lg:hidden"
                 >
-                  <Link to="/" className="mb-8 px-3" aria-label="StoxWork home" onClick={() => setDrawer(false)}>
+                  <Link to="/" className="mb-8 px-3" aria-label="EquiYield home" onClick={() => setDrawer(false)}>
                     <Logo className="h-5 w-auto text-foreground" />
                   </Link>
                   <NavList onNavigate={() => setDrawer(false)} />
@@ -161,7 +161,7 @@ export function AppLayout() {
                     <path d="M3 6h14M3 10h14M3 14h14" {...stroke} />
                   </svg>
                 </button>
-                <Link to="/" className="lg:hidden" aria-label="StoxWork home">
+                <Link to="/" className="lg:hidden" aria-label="EquiYield home">
                   <Logo className="h-4 w-auto text-foreground" />
                 </Link>
               </div>

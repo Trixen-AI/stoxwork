@@ -47,14 +47,14 @@ export function Vaults() {
     <>
       <PageHeader
         eyebrow="Vaults"
-        title="One vault. One Stock Token."
-        description="Each vault runs managed liquidity for a single USDG / Stock Token pool. Deposit USDG, own a slice of that market, and fees compound inside the vault."
+        title="One vault. One xStock."
+        description="Each vault runs managed liquidity for a single USDG / xStock pool. Deposit USDG, own a slice of that market, and fees compound inside the vault."
       />
 
       <StatGrid className="mb-6 grid-cols-2 lg:grid-cols-4">
         <StatTile label="Total value locked" value={usd(tvl)} note={`Across ${MARKETS.length} vaults`} />
         <StatTile label="Volume 24h" value={usd(vol)} note="Swaps through vault pools" />
-        <StatTile label="Top est. APR" value={pct(best.feeApr, 1)} tone="gold" note={`${best.ticker} vault`} />
+        <StatTile label="Top est. APR" value={pct(best.feeApr, 1)} tone="brand" note={`${best.ticker} vault`} />
         <StatTile
           label="Your deposits"
           value={state.wallet.connected ? usd(rows.reduce((s, r) => s + r.mine, 0)) : '–'}
@@ -72,7 +72,7 @@ export function Vaults() {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search ticker or company"
-          className="w-full rounded-lg border border-foreground/10 bg-card px-4 py-2.5 text-sm outline-none placeholder:text-foreground/30 focus:border-gold-bright/50 sm:w-72"
+          className="w-full rounded-lg border border-foreground/10 bg-card px-4 py-2.5 text-sm outline-none placeholder:text-foreground/30 focus:border-brand-bright/50 sm:w-72"
         />
       </div>
 
@@ -85,7 +85,7 @@ export function Vaults() {
                   <th key={c.key} scope="col" aria-sort={sort.key === c.key ? (sort.dir === 1 ? 'ascending' : 'descending') : 'none'} className={cn('px-5 py-3 font-medium', c.align === 'right' ? 'text-right' : 'text-left')}>
                     <button type="button" onClick={() => toggle(c.key)} className="cursor-pointer uppercase transition-colors hover:text-foreground">
                       {c.label}
-                      <span aria-hidden="true" className={sort.key === c.key ? 'text-gold-bright' : 'text-transparent'}>
+                      <span aria-hidden="true" className={sort.key === c.key ? 'text-brand-bright' : 'text-transparent'}>
                         {sort.dir === 1 ? ' ↑' : ' ↓'}
                       </span>
                     </button>
@@ -114,7 +114,7 @@ export function Vaults() {
                     </div>
                   </td>
                   <td className="tnum px-5 py-3.5 text-right font-mono text-foreground/80">{usd(r.tvl)}</td>
-                  <td className="tnum px-5 py-3.5 text-right font-mono text-gold-bright/90">{pct(r.feeApr, 1)}</td>
+                  <td className="tnum px-5 py-3.5 text-right font-mono text-brand-bright/90">{pct(r.feeApr, 1)}</td>
                   <td className="tnum px-5 py-3.5 text-right font-mono text-foreground/60">{usd(r.volume24h)}</td>
                   <td className="px-5 py-3.5 text-right">
                     <span className="tnum font-mono text-xs text-foreground/55">
@@ -125,7 +125,7 @@ export function Vaults() {
                     <Link
                       to={`/app/vaults/${r.ticker}`}
                       onClick={(e) => e.stopPropagation()}
-                      className="rounded-md border border-foreground/10 px-3 py-1.5 text-xs text-foreground/70 transition-colors hover:border-gold-bright/40 hover:text-gold-bright"
+                      className="rounded-md border border-foreground/10 px-3 py-1.5 text-xs text-foreground/70 transition-colors hover:border-brand-bright/40 hover:text-brand-bright"
                     >
                       {state.wallet.connected && r.mine > 0 ? 'Manage' : 'Deposit'}
                     </Link>

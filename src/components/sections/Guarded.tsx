@@ -57,7 +57,7 @@ export function Guarded() {
               <RotatingWord words={['deposit', 'swap', 'borrow']} className="text-gradient" />
             </h2>
             <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-pretty text-foreground/50">
-              Chainlink price and L2 sequencer feeds must be fresh before anything moves. Vaults and lending markets
+              Pyth price and confidence feeds must be fresh before anything moves. Vaults and lending markets
               are each capped, pausable and verifiable onchain. Vault shares are not a stablecoin and are not
               principal-protected.
             </p>

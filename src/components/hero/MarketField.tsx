@@ -65,18 +65,18 @@ export function MarketField({ className }: { className?: string }) {
       >
         <defs>
           <linearGradient id="tv-bar" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stopColor="var(--color-gold-bright)" stopOpacity="0.85" />
-            <stop offset="100%" stopColor="var(--color-gold)" stopOpacity="0.12" />
+            <stop offset="0%" stopColor="var(--color-brand-bright)" stopOpacity="0.85" />
+            <stop offset="100%" stopColor="var(--color-brand)" stopOpacity="0.12" />
           </linearGradient>
           <linearGradient id="tv-trend" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="var(--color-gold-bright)" stopOpacity="0" />
-            <stop offset="22%" stopColor="var(--color-gold-bright)" stopOpacity="0.95" />
-            <stop offset="78%" stopColor="var(--color-gold-light)" stopOpacity="0.95" />
-            <stop offset="100%" stopColor="var(--color-gold-light)" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--color-brand-bright)" stopOpacity="0" />
+            <stop offset="22%" stopColor="var(--color-brand-bright)" stopOpacity="0.95" />
+            <stop offset="78%" stopColor="var(--color-brand-light)" stopOpacity="0.95" />
+            <stop offset="100%" stopColor="var(--color-brand-light)" stopOpacity="0" />
           </linearGradient>
           <radialGradient id="tv-glow" cx="50%" cy="72%" r="60%">
-            <stop offset="0%" stopColor="var(--color-gold)" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="var(--color-gold)" stopOpacity="0" />
+            <stop offset="0%" stopColor="var(--color-brand)" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="var(--color-brand)" stopOpacity="0" />
           </radialGradient>
         </defs>
 

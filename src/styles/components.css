@@ -23,13 +23,13 @@
 /* The `background` shorthand resets `background-clip`, so each rule sets the
    gradient and the clip together, in that order. */
 .text-gradient {
-  background: linear-gradient(90deg, var(--color-gold-bright), var(--color-gold-light));
+  background: linear-gradient(90deg, var(--color-brand-bright), var(--color-brand-light));
   -webkit-background-clip: text;
   background-clip: text;
 }
 
 .hero-accent {
-  background: linear-gradient(to right, var(--color-gold-bright), var(--color-gold-light));
+  background: linear-gradient(to right, var(--color-brand-bright), var(--color-brand-light));
   -webkit-background-clip: text;
   background-clip: text;
 }
@@ -39,10 +39,10 @@
   -webkit-text-fill-color: transparent;
 }
 
-/* primary fill: gold reads as the vault, so the label goes dark for contrast */
+/* primary fill: the brand orange reads as the vault, so the label goes dark for contrast */
 .cta-primary,
 .hero-cta-primary {
-  background: linear-gradient(135deg, var(--color-gold-bright) 0%, var(--color-gold-light) 55%, var(--color-gold) 100%);
+  background: linear-gradient(135deg, var(--color-brand-bright) 0%, var(--color-brand-light) 55%, var(--color-brand) 100%);
 }
 
 /* ---- ambient motion ------------------------------------------------------- */

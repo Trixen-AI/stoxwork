@@ -37,7 +37,7 @@ export function Instruments() {
           top: 'calc(11.11vw - 20px)',
           width: '40px',
           height: '40px',
-          background: 'radial-gradient(circle, var(--vis-gold-mid), transparent 70%)',
+          background: 'radial-gradient(circle, var(--vis-brand-mid), transparent 70%)',
         }}
       />
       <div
@@ -68,7 +68,7 @@ export function Instruments() {
       {/* two settlement marks that twinkle out of phase */}
       <div
         className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full animate-[twinkle_5s_ease-in-out_infinite]"
-        style={{ left: '27.46vw', top: '33.33vw', width: '6px', height: '6px', background: 'radial-gradient(circle, var(--vis-accent-gold), transparent 70%)' }}
+        style={{ left: '27.46vw', top: '33.33vw', width: '6px', height: '6px', background: 'radial-gradient(circle, var(--vis-accent-brand), transparent 70%)' }}
       />
       <div
         className="absolute -translate-x-1/2 -translate-y-1/2 rounded-full animate-[twinkle_5s_ease-in-out_infinite_2.5s]"

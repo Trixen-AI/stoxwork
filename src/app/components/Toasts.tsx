@@ -37,7 +37,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
             >
               <span
                 aria-hidden="true"
-                className={cn('mt-1 h-2 w-2 flex-shrink-0 rounded-full', t.tone === 'success' ? 'bg-gold-bright' : t.tone === 'info' ? 'bg-ink-blue' : 'bg-ink-rose')}
+                className={cn('mt-1 h-2 w-2 flex-shrink-0 rounded-full', t.tone === 'success' ? 'bg-brand-bright' : t.tone === 'info' ? 'bg-ink-blue' : 'bg-ink-rose')}
               />
               <div className="min-w-0">
                 <p className="text-sm font-medium">{t.title}</p>

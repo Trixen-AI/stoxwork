@@ -10,7 +10,7 @@ export const num = (n: number, digits = 2) =>
 /** 18.40% */
 export const pct = (n: number, digits = 2) => `${num(n, digits)}%`
 
-/** Token amounts: 4 decimals under 1, 2 above, so small Stock Token balances stay readable. */
+/** Token amounts: 4 decimals under 1, 2 above, so small xStock balances stay readable. */
 export const amount = (n: number) => num(n, Math.abs(n) < 1 && n !== 0 ? 4 : 2)
 
 export const shortAddr = (a: string) => `${a.slice(0, 6)}…${a.slice(-4)}`

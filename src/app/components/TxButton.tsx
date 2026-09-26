@@ -1,6 +1,6 @@
 import { cn } from '@/lib/cn'
 
-/** The primary action of a form. Gold like the site's primary CTA. */
+/** The primary action of a form, in the brand fill. */
 export function TxButton({ label, pending, disabled, onClick }: { label: string; pending: boolean; disabled?: boolean; onClick: () => void }) {
   return (
     <button

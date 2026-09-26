@@ -36,7 +36,7 @@ const GROUP: Record<ActivityKind, Filter> = {
 
 export function ActivityList({ items }: { items: Tx[] }) {
   if (!items.length) {
-    return <p className="px-5 py-10 text-center text-sm text-foreground/45">No StoxWork transactions from this wallet yet.</p>
+    return <p className="px-5 py-10 text-center text-sm text-foreground/45">No EquiYield transactions from this wallet yet.</p>
   }
   return (
     <ul>
@@ -69,7 +69,7 @@ export function Activity() {
       <PageHeader
         eyebrow="Activity"
         title="Transaction history"
-        description="Every StoxWork deposit, loan and swap from this wallet, newest first."
+        description="Every EquiYield deposit, loan and swap from this wallet, newest first."
         actions={
           state.wallet.connected ? (
             <a

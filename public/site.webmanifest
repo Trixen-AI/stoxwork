@@ -1,7 +1,7 @@
 {
-  "name": "StoxWork",
-  "short_name": "StoxWork",
-  "description": "Tokenized stock vaults on Robinhood Chain. Put your USDG to work.",
+  "name": "EquiYield",
+  "short_name": "EquiYield",
+  "description": "Tokenized stock vaults on Solana. Put your USDG to work.",
   "start_url": "/app",
   "scope": "/",
   "display": "standalone",

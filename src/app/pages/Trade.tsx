@@ -37,7 +37,7 @@ export function Trade() {
       <PageHeader
         eyebrow="Trade"
         title="Swap through the vaults"
-        description="Every Stock Token trades against its own vault's pool. The 0.30% swap fee stays in the vault and is what depositors earn."
+        description="Every xStock trades against its own vault's pool. The 0.30% swap fee stays in the vault and is what depositors earn."
       />
 
       <div className="grid gap-6 lg:grid-cols-[1fr_400px]">
@@ -109,7 +109,7 @@ export function Trade() {
                     setRaw('')
                   }}
                   aria-label="Switch direction"
-                  className="mx-auto flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-foreground/10 text-foreground/60 transition-colors hover:border-gold-bright/40 hover:text-gold-bright"
+                  className="mx-auto flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-foreground/10 text-foreground/60 transition-colors hover:border-brand-bright/40 hover:text-brand-bright"
                 >
                   <svg viewBox="0 0 16 16" className="h-3.5 w-3.5" aria-hidden="true">
                     <path d="M5 2v11m0 0-3-3m3 3 3-3M11 14V3m0 0L8 6m3-3 3 3" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

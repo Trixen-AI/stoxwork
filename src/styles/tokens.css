@@ -1,12 +1,12 @@
 /* Runtime tokens: everything the components read at paint time.
    Kept unlayered so the cascade order matches the utility layer. */
 :root {
-  --page-background: #0e0f11;
+  --page-background: #0a0a0b;
 
-  --color-background: #0e0f11;
+  --color-background: #0a0a0b;
   --color-foreground: #fff;
-  --color-surface: #151719;
-  --color-card: #1a1c1f;
+  --color-surface: #141416;
+  --color-card: #17181a;
   --color-border: #ffffff14;
   --color-muted-foreground: #ffffffb3;
   --color-subtle-foreground: #ffffff80;
@@ -18,32 +18,32 @@
   --grid-line-subtle: #ffffff1a;
   --card-hairline: #ffffff26;
 
-  /* data ink: gold carries the vault side, blue the borrow side, rose the hedge */
-  --vis-accent-gold: #f2c55c;
-  --vis-accent-blue: #6ea8fe;
-  --vis-accent-rose: #e8737d;
-  --vis-gold-soft: #f2c55c2e;
-  --vis-gold-mid: #f2c55c59;
-  --vis-gold-strong: #f2c55c8c;
-  --vis-blue-soft: #6ea8fe59;
-  --vis-blue-mid: #6ea8feb3;
+  /* data ink: orange carries the vault side, mint the supply side, blue the borrow side */
+  --vis-accent-brand: #ffa23d;
+  --vis-accent-mint: #71cfa3;
+  --vis-accent-blue: #7cc4f8;
+  --vis-brand-soft: #ffa23d2e;
+  --vis-brand-mid: #ffa23d59;
+  --vis-brand-strong: #ffa23d8c;
+  --vis-blue-soft: #7cc4f859;
+  --vis-blue-mid: #7cc4f8b3;
 
   /* chart marks: darker steps of the same three hues, validated for the dark card
      surface (OKLCH L 0.48-0.67, adjacent CVD dE ~20). The brighter accents above
      stay for UI text and chips; charts use these. */
-  --chart-1: #c08a1e;
-  --chart-2: #4a86e8;
-  --chart-3: #d45a66;
-  --chart-neutral: #6b6f76;
+  --chart-1: #cc7a12;
+  --chart-2: #46a077;
+  --chart-3: #5590db;
+  --chart-neutral: #6b6b6b;
 
   /* hero stack */
-  --hero-base: linear-gradient(160deg, #0b0906, #14100a 40%, #171208);
+  --hero-base: linear-gradient(160deg, #0b0705, #140c04 40%, #170e05);
   --hero-vignette: #070605b3;
   --hero-overlay-center: #06050400;
   --hero-overlay-mobile: #060504e0;
-  --hero-bottom-fade: #0e0f11;
-  --hero-tint: linear-gradient(160deg, #a9752138, #4a340f52 50%, #a975212e);
+  --hero-bottom-fade: #0a0a0b;
+  --hero-tint: linear-gradient(160deg, #b35f0038, #5a300f52 50%, #b35f002e);
 
-  --code-bg: #212326;
-  --code-border: #292c30;
+  --code-bg: #1d1d1f;
+  --code-border: #232325;
 }

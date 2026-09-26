@@ -3,7 +3,7 @@ import { cn } from '@/lib/cn'
 type Tone = 'live' | 'pending' | 'locked'
 
 const TONE: Record<Tone, { dot: string; text: string }> = {
-  live: { dot: 'bg-gold-bright', text: 'text-gold-bright/80' },
+  live: { dot: 'bg-brand-bright', text: 'text-brand-bright/80' },
   pending: { dot: 'bg-foreground/40', text: 'text-foreground/40' },
   locked: { dot: 'bg-ink-blue/70', text: 'text-ink-blue/70' },
 }
